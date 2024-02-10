@@ -26,10 +26,10 @@ public class Application implements IApp {
     public void start() {
         boolean flag = true;
         while (flag) {
-            view.invitation();
+            System.out.println("Введите следующие данные: ");
             while (flag) {
                 try {
-                    data.put("surname", view.getSurname());
+                    data.put("surname", view.dataUser.getSurname());
                     flag = false;
                 } catch (FIOInvalidFormatException exception) {
                     view.printError("Вы ввели фамилию некоректно.\n" +
@@ -39,7 +39,7 @@ public class Application implements IApp {
             flag = true;
             while (flag) {
                 try {
-                    data.put("name", view.getName());
+                    data.put("name", view.dataUser.getName());
                     flag = false;
                 } catch (FIOInvalidFormatException ex) {
                     view.printError("Вы ввели имя некоректно.\n" +
@@ -49,7 +49,7 @@ public class Application implements IApp {
             flag = true;
             while (flag) {
                 try {
-                    data.put("patronymic", view.getPatronymic());
+                    data.put("patronymic", view.dataUser.getPatronymic());
                     flag = false;
                 } catch (FIOInvalidFormatException ex) {
                     view.printError("Вы ввели отчество некоректно.\n" +
@@ -59,7 +59,7 @@ public class Application implements IApp {
             flag = true;
             while (flag) {
                 try {
-                    data.put("birthData", view.getBirthData());
+                    data.put("birthData", view.dataUser.getBirthData());
                     flag = false;
                 } catch (
                         InvalidDataFormatException ex) {
@@ -70,7 +70,7 @@ public class Application implements IApp {
             flag = true;
             while (flag) {
                 try {
-                    data.put("numberPhone", view.getNumberPhone());
+                    data.put("numberPhone", view.dataUser.getNumberPhone());
                     flag = false;
                 } catch (InvalidNumberPhoneFormat ex) {
                     view.printError("Вы ввели номер в некоректной формате\n" +
@@ -80,7 +80,7 @@ public class Application implements IApp {
             flag = true;
             while (flag) {
                 try {
-                    data.put("floor", view.getFloor());
+                    data.put("floor", view.dataUser.getFloor());
                     flag = false;
                 } catch (InvalidFloorException ex) {
                     view.printError("Вы ввели пол в некоректной форме\n" +

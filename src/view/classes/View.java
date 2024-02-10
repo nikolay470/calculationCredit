@@ -1,63 +1,28 @@
 package view.classes;
 
-import view.classes.exceptions.*;
-import view.interfaces.CurrentLocal;
+import view.interfaces.IDataUser;
 import view.interfaces.IView;
 
+import java.io.InputStream;
 import java.util.Scanner;
 
 public class View implements IView {
     private static View view;
     private Scanner scanner;
-    private CurrentLocal local;
-    private Check checkData;
+    public IDataUser dataUser;
 
-    private View() {
-        scanner = new Scanner(System.in);
-        local = RU_local.getLocal();
-        checkData = new Check();
+    private View(InputStream stream) {
+        scanner = new Scanner(stream);
+        dataUser = new DataUser(stream, ControllerLocal.getRuLocal(), new Check());
     }
 
     public static View getView() {
         if (view == null) {
-            view = new View();
+            view = new View(System.in);
             return view;
         } else {
             return view;
         }
-    }
-    public void invitation() {
-        System.out.println("Введите следующие данные: ");
-    }
-    @Override
-    public String getSurname() throws FIOInvalidFormatException {
-        System.out.println("Фамилия: ");
-        return checkData.checkFIO(scanner.nextLine(), local);
-    }
-    @Override
-    public String getName() throws FIOInvalidFormatException {
-        System.out.println("Имя: ");
-        return checkData.checkFIO(scanner.nextLine(), local);
-    }
-    @Override
-    public String getPatronymic() throws FIOInvalidFormatException {
-        System.out.println("Отчество: ");
-        return checkData.checkFIO(scanner.nextLine(), local);
-    }
-    @Override
-    public String getBirthData() throws InvalidDataFormatException {
-        System.out.println("Дата рождения (дд.мм.гггг): ");
-        return checkData.checkBirthData(scanner.nextLine());
-    }
-    @Override
-    public long getNumberPhone() throws InvalidNumberPhoneFormat {
-        System.out.println("Номер телефона: ");
-        return checkData.checkNumberPhone(scanner.nextLine());
-    }
-    @Override
-    public String getFloor() throws InvalidFloorException {
-        System.out.println("Ваш пол: ");
-        return checkData.checkFloor(scanner.nextLine());
     }
 
     @Override
