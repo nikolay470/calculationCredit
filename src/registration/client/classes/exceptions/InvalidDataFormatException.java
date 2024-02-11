@@ -1,4 +1,4 @@
-package view.classes.exceptions;
+package registration.client.classes.exceptions;
 
 public class InvalidDataFormatException extends Exception{
     public InvalidDataFormatException(String mess) {

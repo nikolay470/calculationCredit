@@ -1,4 +1,4 @@
-package view.classes.exceptions;
+package registration.client.classes.exceptions;
 
 public class CountDataException extends Exception {
     public CountDataException(String mess) {

@@ -1,6 +1,6 @@
-package view.classes;
+package registration.client.classes;
 
-import view.interfaces.CurrentLocal;
+import registration.client.interfaces.CurrentLocal;
 
 public class ControllerLocal {
     private static CurrentLocal ru_local;

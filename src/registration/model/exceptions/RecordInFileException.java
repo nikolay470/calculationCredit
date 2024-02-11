@@ -1,10 +1,10 @@
-package view.classes.exceptions;
+package registration.model.exceptions;
 
-public class InvalidFloorException extends Exception {
-    public InvalidFloorException(String mess) {
+public class RecordInFileException extends Exception{
+    public RecordInFileException(String mess) {
         super(mess);
     }
-    public InvalidFloorException() {}
+    public RecordInFileException() {}
     public String getMessage() {
         return super.getMessage();
     }

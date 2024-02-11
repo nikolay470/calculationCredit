@@ -1,7 +1,7 @@
-package model.classes;
+package registration.model;
 
-import model.classes.exceptions.RecordInFileException;
-import model.interfaces.IModel;
+import registration.model.exceptions.RecordInFileException;
+import registration.model.interfaces.IModel;
 
 import java.io.FileWriter;
 import java.io.IOException;

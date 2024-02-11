@@ -1,12 +1,12 @@
-package view.classes;
+package registration.client.classes;
 
-import view.classes.exceptions.FIOInvalidFormatException;
-import view.classes.exceptions.InvalidDataFormatException;
-import view.classes.exceptions.InvalidFloorException;
-import view.classes.exceptions.InvalidNumberPhoneFormat;
-import view.interfaces.CurrentLocal;
-import view.interfaces.IChekData;
-import view.interfaces.IDataUser;
+import registration.client.classes.exceptions.FIOInvalidFormatException;
+import registration.client.classes.exceptions.InvalidDataFormatException;
+import registration.client.classes.exceptions.InvalidFloorException;
+import registration.client.classes.exceptions.InvalidNumberPhoneFormat;
+import registration.client.interfaces.CurrentLocal;
+import registration.client.interfaces.IChekData;
+import registration.client.interfaces.IDataUser;
 
 import java.io.InputStream;
 import java.util.Scanner;

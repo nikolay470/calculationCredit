@@ -1,4 +1,4 @@
-package view.classes.exceptions;
+package registration.client.classes.exceptions;
 
 public class InvalidNumberPhoneFormat extends Exception{
     public InvalidNumberPhoneFormat(String mess) {

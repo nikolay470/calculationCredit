@@ -1,28 +1,15 @@
-package view.classes;
+package registration.client.classes;
 
-import view.interfaces.IDataUser;
-import view.interfaces.IView;
+import registration.client.interfaces.IMessageSystem;
 
 import java.io.InputStream;
 import java.util.Scanner;
 
-public class View implements IView {
-    private static View view;
+public class MessageSystem implements IMessageSystem {
     private Scanner scanner;
-    public IDataUser dataUser;
 
-    private View(InputStream stream) {
+    public MessageSystem(InputStream stream) {
         scanner = new Scanner(stream);
-        dataUser = new DataUser(stream, ControllerLocal.getRuLocal(), new Check());
-    }
-
-    public static View getView() {
-        if (view == null) {
-            view = new View(System.in);
-            return view;
-        } else {
-            return view;
-        }
     }
 
     @Override

@@ -1,9 +1,9 @@
-package view.interfaces;
+package registration.client.interfaces;
 
-import view.classes.exceptions.FIOInvalidFormatException;
-import view.classes.exceptions.InvalidDataFormatException;
-import view.classes.exceptions.InvalidFloorException;
-import view.classes.exceptions.InvalidNumberPhoneFormat;
+import registration.client.classes.exceptions.FIOInvalidFormatException;
+import registration.client.classes.exceptions.InvalidDataFormatException;
+import registration.client.classes.exceptions.InvalidFloorException;
+import registration.client.classes.exceptions.InvalidNumberPhoneFormat;
 
 public interface IDataUser {
     String getSurname() throws FIOInvalidFormatException;

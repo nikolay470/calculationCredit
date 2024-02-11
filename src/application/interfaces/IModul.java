@@ -1,5 +1,5 @@
 package application.interfaces;
 
-public interface IApp {
+public interface IModul {
     void start();
 }

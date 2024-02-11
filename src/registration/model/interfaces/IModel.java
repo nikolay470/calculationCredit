@@ -1,8 +1,7 @@
-package model.interfaces;
+package registration.model.interfaces;
 
-import model.classes.exceptions.RecordInFileException;
+import registration.model.exceptions.RecordInFileException;
 
-import java.io.IOException;
 import java.util.HashMap;
 
 public interface IModel {
