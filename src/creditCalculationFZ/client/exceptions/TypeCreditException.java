@@ -1,4 +1,4 @@
-package creditCalculation.client.exceptions;
+package creditCalculationFZ.client.exceptions;
 
 public class TypeCreditException extends Exception{
     public TypeCreditException(String mess) {

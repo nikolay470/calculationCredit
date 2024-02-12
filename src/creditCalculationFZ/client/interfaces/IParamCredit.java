@@ -1,8 +1,6 @@
-package creditCalculation.client.interfaces;
+package creditCalculationFZ.client.interfaces;
 
-import creditCalculation.client.exceptions.*;
-
-import java.util.Map;
+import creditCalculationFZ.client.exceptions.*;
 
 public interface IParamCredit {
     int typeCredit() throws TypeCreditException;
@@ -11,5 +9,5 @@ public interface IParamCredit {
     int firstPayment() throws InvalidSumException;
     String typePayment() throws InvalidTypePaymentException;
     int incom() throws InvalidSumException;
-    float creditLoad() throws InvalidFormatCreditLoad;
+    float creditLoad() throws InvalidCreditLoad, BigPrecentLoadException;
 }

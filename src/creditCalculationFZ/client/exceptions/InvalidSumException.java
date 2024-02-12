@@ -1,4 +1,4 @@
-package creditCalculation.client.exceptions;
+package creditCalculationFZ.client.exceptions;
 
 public class InvalidSumException extends Exception{
     public InvalidSumException(String mess) {

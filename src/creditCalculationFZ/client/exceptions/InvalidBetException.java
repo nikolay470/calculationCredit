@@ -1,4 +1,4 @@
-package creditCalculation.client.exceptions;
+package creditCalculationFZ.client.exceptions;
 
 public class InvalidBetException extends Exception {
     public InvalidBetException(String mess) {
