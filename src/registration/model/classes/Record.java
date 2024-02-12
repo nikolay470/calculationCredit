@@ -1,16 +1,13 @@
-package registration.model;
+package registration.model.classes;
 
 import registration.model.exceptions.RecordInFileException;
-import registration.model.interfaces.IModel;
+import registration.model.interfaces.IRecord;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.HashMap;;
+import java.util.HashMap;
 
-public class Model implements IModel {
-    private static Model model;
-    private Model() {}
-
+public class Record implements IRecord {
     @Override
     public void createRecordUser(HashMap<String, Object> data) throws RecordInFileException {
         try {
@@ -18,8 +15,8 @@ public class Model implements IModel {
             FileWriter writer = new FileWriter(pathFile, true);
             String record = String.format(
                     "%s %s %s\nДата рождения: %s\n"
-                    + "Номер телефона: %d\nПол: %s\n"
-                    +"============================================\n\n",
+                            + "Номер телефона: %d\nПол: %s\n"
+                            +"============================================\n\n",
                     data.get("surname"), data.get("name"), data.get("patronymic"),
                     data.get("birthData"), data.get("numberPhone"), data.get("floor")
             );
@@ -27,15 +24,6 @@ public class Model implements IModel {
             writer.close();
         } catch (IOException exception) {
             throw new RecordInFileException();
-        }
-    }
-
-    public static Model getModel() {
-        if (model == null) {
-            model = new Model();
-            return model;
-        } else {
-            return model;
         }
     }
 }

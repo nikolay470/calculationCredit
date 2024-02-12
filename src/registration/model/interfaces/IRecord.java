@@ -4,6 +4,6 @@ import registration.model.exceptions.RecordInFileException;
 
 import java.util.HashMap;
 
-public interface IModel {
+public interface IRecord {
     void createRecordUser(HashMap<String, Object> data) throws RecordInFileException;
 }

@@ -1,13 +1,13 @@
 package registration;
 
 import application.interfaces.IModul;
-import registration.model.Model;
+import registration.model.classes.Model;
 import registration.model.exceptions.RecordInFileException;
 import registration.client.classes.Client;
-import registration.client.classes.exceptions.FIOInvalidFormatException;
-import registration.client.classes.exceptions.InvalidDataFormatException;
-import registration.client.classes.exceptions.InvalidFloorException;
-import registration.client.classes.exceptions.InvalidNumberPhoneFormat;
+import registration.client.exceptions.FIOInvalidFormatException;
+import registration.client.exceptions.InvalidDataFormatException;
+import registration.client.exceptions.InvalidFloorException;
+import registration.client.exceptions.InvalidNumberPhoneFormat;
 
 import java.util.HashMap;
 
@@ -89,7 +89,7 @@ public class Registration implements IModul {
             }
             flag = true;
             try {
-                model.createRecordUser(data);
+                model.record.createRecordUser(data);
                 client.messageSystem.printResult(true);
             } catch (RecordInFileException ex) {
                 client.messageSystem.printResult(false);

@@ -1,9 +1,9 @@
 package registration.client.classes;
 
-import registration.client.classes.exceptions.FIOInvalidFormatException;
-import registration.client.classes.exceptions.InvalidDataFormatException;
-import registration.client.classes.exceptions.InvalidFloorException;
-import registration.client.classes.exceptions.InvalidNumberPhoneFormat;
+import registration.client.exceptions.FIOInvalidFormatException;
+import registration.client.exceptions.InvalidDataFormatException;
+import registration.client.exceptions.InvalidFloorException;
+import registration.client.exceptions.InvalidNumberPhoneFormat;
 import registration.client.interfaces.CurrentLocal;
 import registration.client.interfaces.IChekData;
 
