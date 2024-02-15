@@ -2,8 +2,11 @@ package creditCalculationFZ.client.classes;
 
 import creditCalculationFZ.client.exceptions.*;
 import creditCalculationFZ.client.interfaces.IChekParamCredit;
+import jdk.dynalink.linker.support.CompositeGuardingDynamicLinker;
 
+import java.beans.Introspector;
 import java.text.DecimalFormat;
+import java.util.HashMap;
 import java.util.Objects;
 
 public class CheckParamCreditFZ implements IChekParamCredit {
@@ -65,6 +68,36 @@ public class CheckParamCreditFZ implements IChekParamCredit {
             }
         } catch (RuntimeException e) {
             throw new InvalidBetException();
+        }
+    }
+
+    @Override
+    public HashMap<String, Integer> checkTimeframeCredit(String year, String months, int creditType)
+            throws InvalidTimeframeCreditException
+    {
+        HashMap<String, Integer> res = new HashMap<>();
+        try {
+            Integer intYears = Integer.parseInt(year);
+            Integer intMonths = Integer.parseInt(months);
+            if (creditType == 1 || creditType == 2) {
+                if ((intYears >= 1 && intYears <= 7) && (intMonths >= 0 && intMonths <= 11)) {
+                    res.put("years", intYears);
+                    res.put("months", intMonths);
+                    return res;
+                } else {
+                    throw new RuntimeException();
+                }
+            } else {
+                if ((intYears >=1 && intYears <= 30) && (intMonths >= 0 && intMonths <= 11)) {
+                    res.put("years", intYears);
+                    res.put("months", intMonths);
+                    return res;
+                } else {
+                    throw new RuntimeException();
+                }
+            }
+        } catch (RuntimeException e) {
+            throw new InvalidTimeframeCreditException();
         }
     }
 

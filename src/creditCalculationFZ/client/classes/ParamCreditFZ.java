@@ -4,6 +4,7 @@ import creditCalculationFZ.client.exceptions.*;
 import creditCalculationFZ.client.interfaces.IParamCredit;
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -46,9 +47,19 @@ public class ParamCreditFZ implements IParamCredit {
     }
 
     @Override
+    public HashMap<String, Integer> timeframeCredit() throws InvalidTimeframeCreditException {
+        System.out.println("Срок кредита.");
+        System.out.print("Сколько лет: ");
+        String year = scanner.nextLine();
+        System.out.print("Сколько месяцев: ");
+        String months = scanner.nextLine();
+        return check.checkTimeframeCredit(year, months, creditType);
+    }
+
+    @Override
     public int firstPayment() throws InvalidSumException {
         System.out.println("Сумма первоначального взноса.");
-        System.out.println("Ввод: ");
+        System.out.print("Ввод: ");
         String firstPayment = scanner.nextLine();
         return check.checkFirstPayment(firstPayment);
     }
